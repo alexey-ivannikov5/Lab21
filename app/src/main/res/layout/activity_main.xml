@@ -8,12 +8,85 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_timer_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="Интервал:"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/et_minutes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="50dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_minutes_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Минуты:"
+        app:layout_constraintBottom_toTopOf="@+id/et_minutes"
+        app:layout_constraintEnd_toEndOf="@+id/et_minutes"
+        app:layout_constraintStart_toStartOf="@+id/et_minutes" />
+
+
+
+    <EditText
+        android:id="@+id/et_minutes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:text="10"
+        app:layout_constraintBottom_toTopOf="@+id/bt_timer_control"
+        app:layout_constraintEnd_toStartOf="@+id/et_seconds"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_timer_label" />
+
+
+    <TextView
+        android:id="@+id/tv_seconds_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Секунды"
+        app:layout_constraintBottom_toTopOf="@+id/et_seconds"
+        app:layout_constraintEnd_toEndOf="@+id/et_seconds"
+        app:layout_constraintStart_toStartOf="@+id/et_seconds" />
+    <EditText
+        android:id="@+id/et_seconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/et_minutes"
+        app:layout_constraintTop_toTopOf="@+id/et_minutes" />
+
+    <Button
+        android:id="@+id/bt_timer_control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/bt_start"
+        app:layout_constraintBottom_toTopOf="@+id/tv_timer_state"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_minutes" />
+
+
+    <TextView
+        android:id="@+id/tv_timer_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stopped_timer_state"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_timer_control" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
